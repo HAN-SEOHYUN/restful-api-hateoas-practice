@@ -28,7 +28,7 @@ Postman을 사용하여 API를 테스트할 수 있도록 컬렉션을 제공합
 1. Postman 컬렉션 다운로드: **메일에 첨부된** Food Nutrition Facts API.postman_collection.json 파일을 다운로드합니다.
 2. Postman에서 컬렉션 Import Postman 애플리케이션에서 Import 버튼을 클릭하여 다운로드한 JSON 파일을 불러옵니다.
 3. 테스트 실행: 컬렉션에 포함된 각 요청을 선택하고 Send 버튼을 눌러 API 호출을 테스트할 수 있습니다.
-   - 모든 요청의 URL은 http://98.83.105.239:8080으로 미리 설정되어 있습니다.
+   - 모든 요청의 URL은 http://98.83.105.239:8080 으로 미리 설정되어 있습니다.
 
 ### 5. Spring REST Docs
 * API 사용법 및 스펙은 Spring REST Docs 를 활용하여 생성된 문서를 통해 확인하실 수 있습니다. 
