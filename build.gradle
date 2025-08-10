@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.5.4'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.asciidoctor.jvm.convert' version '3.3.2'
 }
 
 group = 'com.example'
@@ -17,10 +18,19 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	snippetsDir = file('build/generated-snippets')
+}
+
+configurations {
+	asciidoctorExt
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	//mysql
 	runtimeOnly 'com.mysql:mysql-connector-j'
@@ -32,9 +42,60 @@ dependencies {
 	//dotenv
 	implementation 'me.paulschwarz:spring-dotenv:3.0.0'
 
+	// lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	//modelmapper
+	implementation 'org.modelmapper:modelmapper:3.2.0'
+
+	//test
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-junit-jupiter'
+	testImplementation 'org.mockito:mockito-inline:5.2.0'
+
 
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+	outputs.dir snippetsDir
 }
+
+asciidoctor {
+	sourceDir = file('src/docs/asciidoc')
+	outputDir = file("$buildDir/docs/asciidoc")
+
+	inputs.dir snippetsDir
+	attributes 'snippets': snippetsDir
+
+	baseDirFollowsSourceFile()
+	configurations 'asciidoctorExt'
+
+	dependsOn test
+}
+
+tasks.register('copyDocs', Copy) {
+	dependsOn 'asciidoctor'
+	from("$buildDir/docs/asciidoc")
+	into("$buildDir/resources/main/static/docs")
+}
+
+tasks.named('bootRun') {
+	dependsOn 'copyDocs'
+}
+
+tasks.named('resolveMainClassName') { dependsOn 'copyDocs' } // 이전 오류 해결용
+
+bootJar {
+	dependsOn 'asciidoctor'
+	from("$buildDir/docs/asciidoc") {
+		into 'static/docs'
+	}
+}
+
+jar {
+	enabled = false
+}
+
