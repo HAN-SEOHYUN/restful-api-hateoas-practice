@@ -1,0 +1,33 @@
+= REST API Guide
+:toc: left
+:snippets: {snippets}
+
+== Food - Create
+include::{snippets}/food-create/http-request.adoc[]
+include::{snippets}/food-create/http-response.adoc[]
+include::{snippets}/food-create/links.adoc[]
+include::{snippets}/food-create/request-fields.adoc[]
+include::{snippets}/food-create/response-fields.adoc[]
+
+== Food - List
+include::{snippets}/food-list/http-request.adoc[]
+include::{snippets}/food-list/http-response.adoc[]
+
+== Food - Get
+include::{snippets}/food-get/http-request.adoc[]
+include::{snippets}/food-get/http-response.adoc[]
+include::{snippets}/food-get/links.adoc[]
+
+== Food - Update
+include::{snippets}/food-update/http-request.adoc[]
+include::{snippets}/food-update/http-response.adoc[]
+include::{snippets}/food-update/request-fields.adoc[]
+include::{snippets}/food-update/response-fields.adoc[]
+
+== Food - Delete
+include::{snippets}/food-delete/http-request.adoc[]
+include::{snippets}/food-delete/http-response.adoc[]
+
+== Food - Search
+include::{snippets}/food-search/http-request.adoc[]
+include::{snippets}/food-search/http-response.adoc[]
