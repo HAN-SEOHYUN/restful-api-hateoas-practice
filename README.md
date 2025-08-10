@@ -34,7 +34,8 @@ Postman을 사용하여 API를 테스트할 수 있도록 컬렉션을 제공합
 * API 사용법 및 스펙은 Spring REST Docs 를 활용하여 생성된 문서를 통해 확인하실 수 있습니다. 
 * Spring REST Docs 는 Spring 애플리케이션의 API 문서를 테스트 코드 기반으로 자동 생성해주는 도구입니다.
 * 응답 본문의 _links 필드를 통해 API 대한 상세 문서 정보를 제공하여 클라이언트에서 API를 적극적으로 탐색할 수 있도록 설계했습니다.
-#### [http://98.83.105.239:8080/docs/index.html](Spring REST Docs)
+* 아래 첨부된 주소에서 API 에 대한 Spring REST Docs를 조회하실 수 있습니다. 
+#### [Spring REST Docs](http://98.83.105.239:8080/docs/index.html)
 
 ### 6. 개발 및 배포 환경
 * 애플리케이션과 DB는 EC2 인스턴스에 배포되어 있습니다.
