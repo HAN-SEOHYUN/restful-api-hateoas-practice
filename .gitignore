@@ -39,3 +39,4 @@ out/
 # 기타
 .env
 .env.*
+.DS_Store
