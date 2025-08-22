@@ -24,22 +24,17 @@ RESTful API의 성숙도 모델(Richardson Maturity Model)을 참고하여 URI, 
 **정확한 이해를 위해 개인적으로 정리한 내용은 다음 링크에서 확인하실 수 있습니다.**
 [개인블로그 - Restful 아키텍쳐: RMM의 의미와 각 단계의 설계적 의의](https://feelfreetothink.tistory.com/250)
 
-### 4. API 테스트 방법
-Postman을 사용하여 API를 테스트할 수 있도록 컬렉션을 제공합니다.
-1. Postman 컬렉션 다운로드: **메일에 첨부된** Food Nutrition Facts API.postman_collection.json 파일을 다운로드합니다.
-2. Postman에서 컬렉션 Import Postman 애플리케이션에서 Import 버튼을 클릭하여 다운로드한 JSON 파일을 불러옵니다.
-3. 테스트 실행: 컬렉션에 포함된 각 요청을 선택하고 Send 버튼을 눌러 API 호출을 테스트할 수 있습니다.
-   - 모든 요청의 URL은 http://98.83.105.239:8080 으로 미리 설정되어 있습니다.
-
-### 5. Spring REST Docs
+### 4. Spring REST Docs
 * API 사용법 및 스펙은 Spring REST Docs 를 활용하여 생성된 문서를 통해 확인하실 수 있습니다. 
 * Spring REST Docs 는 Spring 애플리케이션의 API 문서를 테스트 코드 기반으로 자동 생성해주는 도구입니다.
 * 응답 본문의 _links 필드를 통해 API 대한 상세 문서 정보를 제공하여 클라이언트에서 API를 적극적으로 탐색할 수 있도록 설계했습니다.
-* 아래 첨부된 주소에서 API 에 대한 Spring REST Docs를 조회하실 수 있습니다. 
-#### [Spring REST Docs](http://98.83.105.239:8080/docs/index.html)
+* ~~아래 첨부된 주소에서 API 에 대한 Spring REST Docs를 조회하실 수 있습니다.~~
+#### ~~[Spring REST Docs](http://98.83.105.239:8080/docs/index.html)~~  
+> 현재는 비용 문제로 서버 인스턴스를 중지하여 문서를 조회할 수 없습니다.
 
-### 6. 개발 및 배포 환경
-* 애플리케이션과 DB는 EC2 인스턴스에 배포되어 있습니다.
+### 5. 개발 및 배포 환경
+- (과거) 애플리케이션과 DB를 EC2 인스턴스에 배포하여 운영
+- (현재) 비용 문제로 인스턴스는 중지된 상태
 
 
 
